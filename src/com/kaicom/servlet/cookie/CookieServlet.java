@@ -30,7 +30,7 @@ public class CookieServlet extends HttpServlet{
 		}else{
 			//代表是第一次访问
 			writer.print("<h1>欢迎第一次访问</h1>");
-		}
+		} 
 		Cookie newCookie = new Cookie("acceptTime", new Date().toLocaleString());
 		/**
 		 * 设置cookie的有效时间，以秒为单位，
