@@ -68,4 +68,8 @@ public class HelloServlet extends HttpServlet{
 			System.out.println("web 初始化参数："+initName+"     值："+servletContext.getInitParameter(initName));
 		}
 	}
+	
+	public void reflex(){
+		System.out.println("***********************通过反射执行了方法***********************");
+	}
 }
