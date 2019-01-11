@@ -21,6 +21,7 @@ public class LoginServlet extends HttpServlet{
 		if("张三".equals(userName)){
 			if("123".equals(password)){
 				String userNameEncoder = URLEncoder.encode(userName,"UTF-8");
+				System.out.println("userNameEncoder--------------->"+userNameEncoder);
 				System.out.println("开始设置了cookie");
 				Cookie cookie = new Cookie("userName", userNameEncoder);
 				cookie.setMaxAge(30);

@@ -7,7 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<%
+	Cookie coo = null ;
+	Cookie[] cookies = request.getCookies();
+	for(Cookie cookie : cookies){
+		if(cookie.getName().equals("userName")){
+			coo = cookie;
+		}
+	}
+	String userNameDecoder = "" ;
+	if(null != coo){
+		System.out.print("coo.getValue()-------------->"+coo.getValue());
+		userNameDecoder = URLDecoder.decode(coo.getValue(),"UTF-8");
+	}
+%>
 <body>
-	<h1>欢迎<%=URLDecoder.decode(request.getCookies()[0].getValue(),"UTF-8") %>登录........................</h1>
+	<h1>欢迎<%=userNameDecoder%>登录........................</h1>
 </body>
 </html>
